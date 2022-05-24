@@ -17,23 +17,11 @@
 		3A9C720E283D5D95000AB50A /* PantallasCleanSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C720D283D5D95000AB50A /* PantallasCleanSwiftUITests.swift */; };
 		3A9C7210283D5D95000AB50A /* PantallasCleanSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C720F283D5D95000AB50A /* PantallasCleanSwiftUITestsLaunchTests.swift */; };
 		3A9C7222283D6838000AB50A /* Pantalla1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721C283D6838000AB50A /* Pantalla1Presenter.swift */; };
-		3A9C7223283D6838000AB50A /* Pantalla1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721C283D6838000AB50A /* Pantalla1Presenter.swift */; };
-		3A9C7224283D6838000AB50A /* Pantalla1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721C283D6838000AB50A /* Pantalla1Presenter.swift */; };
 		3A9C7225283D6838000AB50A /* Pantalla1Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721D283D6838000AB50A /* Pantalla1Worker.swift */; };
-		3A9C7226283D6838000AB50A /* Pantalla1Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721D283D6838000AB50A /* Pantalla1Worker.swift */; };
-		3A9C7227283D6838000AB50A /* Pantalla1Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721D283D6838000AB50A /* Pantalla1Worker.swift */; };
 		3A9C7228283D6838000AB50A /* Pantalla1Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721E283D6838000AB50A /* Pantalla1Router.swift */; };
-		3A9C7229283D6838000AB50A /* Pantalla1Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721E283D6838000AB50A /* Pantalla1Router.swift */; };
-		3A9C722A283D6838000AB50A /* Pantalla1Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721E283D6838000AB50A /* Pantalla1Router.swift */; };
 		3A9C722B283D6838000AB50A /* Pantalla1Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721F283D6838000AB50A /* Pantalla1Models.swift */; };
-		3A9C722C283D6838000AB50A /* Pantalla1Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721F283D6838000AB50A /* Pantalla1Models.swift */; };
-		3A9C722D283D6838000AB50A /* Pantalla1Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C721F283D6838000AB50A /* Pantalla1Models.swift */; };
 		3A9C722E283D6838000AB50A /* Pantalla1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7220283D6838000AB50A /* Pantalla1ViewController.swift */; };
-		3A9C722F283D6838000AB50A /* Pantalla1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7220283D6838000AB50A /* Pantalla1ViewController.swift */; };
-		3A9C7230283D6838000AB50A /* Pantalla1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7220283D6838000AB50A /* Pantalla1ViewController.swift */; };
 		3A9C7231283D6838000AB50A /* Pantalla1Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7221283D6838000AB50A /* Pantalla1Interactor.swift */; };
-		3A9C7232283D6838000AB50A /* Pantalla1Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7221283D6838000AB50A /* Pantalla1Interactor.swift */; };
-		3A9C7233283D6838000AB50A /* Pantalla1Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7221283D6838000AB50A /* Pantalla1Interactor.swift */; };
 		3A9C723B283D68B3000AB50A /* Pantalla2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7235283D68B3000AB50A /* Pantalla2Presenter.swift */; };
 		3A9C723C283D68B3000AB50A /* Pantalla2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7235283D68B3000AB50A /* Pantalla2Presenter.swift */; };
 		3A9C723D283D68B3000AB50A /* Pantalla2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C7235283D68B3000AB50A /* Pantalla2Presenter.swift */; };
@@ -150,8 +138,8 @@
 				3A9C71EC283D5D90000AB50A /* AppDelegate.swift */,
 				3A9C71EE283D5D90000AB50A /* SceneDelegate.swift */,
 				3A9C71F0283D5D90000AB50A /* ViewController.swift */,
+				3A9C7251283D6BE2000AB50A /* New GroupPantalla11 */,
 				3A9C724D283D68D5000AB50A /* Pantalla2 */,
-				3A9C7234283D684F000AB50A /* Pantalla1 */,
 				3A9C71F2283D5D90000AB50A /* Main.storyboard */,
 				3A9C71F5283D5D94000AB50A /* Assets.xcassets */,
 				3A9C71F7283D5D94000AB50A /* LaunchScreen.storyboard */,
@@ -177,19 +165,6 @@
 			path = PantallasCleanSwiftUITests;
 			sourceTree = "<group>";
 		};
-		3A9C7234283D684F000AB50A /* Pantalla1 */ = {
-			isa = PBXGroup;
-			children = (
-				3A9C721C283D6838000AB50A /* Pantalla1Presenter.swift */,
-				3A9C721D283D6838000AB50A /* Pantalla1Worker.swift */,
-				3A9C721E283D6838000AB50A /* Pantalla1Router.swift */,
-				3A9C721F283D6838000AB50A /* Pantalla1Models.swift */,
-				3A9C7220283D6838000AB50A /* Pantalla1ViewController.swift */,
-				3A9C7221283D6838000AB50A /* Pantalla1Interactor.swift */,
-			);
-			name = Pantalla1;
-			sourceTree = "<group>";
-		};
 		3A9C724D283D68D5000AB50A /* Pantalla2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +176,19 @@
 				3A9C723A283D68B3000AB50A /* Pantalla2Interactor.swift */,
 			);
 			path = Pantalla2;
+			sourceTree = "<group>";
+		};
+		3A9C7251283D6BE2000AB50A /* New GroupPantalla11 */ = {
+			isa = PBXGroup;
+			children = (
+				3A9C721C283D6838000AB50A /* Pantalla1Presenter.swift */,
+				3A9C721D283D6838000AB50A /* Pantalla1Worker.swift */,
+				3A9C721E283D6838000AB50A /* Pantalla1Router.swift */,
+				3A9C721F283D6838000AB50A /* Pantalla1Models.swift */,
+				3A9C7220283D6838000AB50A /* Pantalla1ViewController.swift */,
+				3A9C7221283D6838000AB50A /* Pantalla1Interactor.swift */,
+			);
+			path = "New GroupPantalla11";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,16 +347,10 @@
 				3A9C7204283D5D95000AB50A /* PantallasCleanSwiftTests.swift in Sources */,
 				3A9C723F283D68B3000AB50A /* Pantalla2Worker.swift in Sources */,
 				3A9C7248283D68B3000AB50A /* Pantalla2ViewController.swift in Sources */,
-				3A9C7223283D6838000AB50A /* Pantalla1Presenter.swift in Sources */,
 				3A9C723C283D68B3000AB50A /* Pantalla2Presenter.swift in Sources */,
 				3A9C724B283D68B3000AB50A /* Pantalla2Interactor.swift in Sources */,
 				3A9C7245283D68B3000AB50A /* Pantalla2Models.swift in Sources */,
 				3A9C7242283D68B3000AB50A /* Pantalla2Router.swift in Sources */,
-				3A9C7232283D6838000AB50A /* Pantalla1Interactor.swift in Sources */,
-				3A9C7226283D6838000AB50A /* Pantalla1Worker.swift in Sources */,
-				3A9C722F283D6838000AB50A /* Pantalla1ViewController.swift in Sources */,
-				3A9C722C283D6838000AB50A /* Pantalla1Models.swift in Sources */,
-				3A9C7229283D6838000AB50A /* Pantalla1Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,17 +360,11 @@
 			files = (
 				3A9C724C283D68B3000AB50A /* Pantalla2Interactor.swift in Sources */,
 				3A9C7243283D68B3000AB50A /* Pantalla2Router.swift in Sources */,
-				3A9C7227283D6838000AB50A /* Pantalla1Worker.swift in Sources */,
 				3A9C7249283D68B3000AB50A /* Pantalla2ViewController.swift in Sources */,
 				3A9C720E283D5D95000AB50A /* PantallasCleanSwiftUITests.swift in Sources */,
-				3A9C722D283D6838000AB50A /* Pantalla1Models.swift in Sources */,
-				3A9C722A283D6838000AB50A /* Pantalla1Router.swift in Sources */,
 				3A9C723D283D68B3000AB50A /* Pantalla2Presenter.swift in Sources */,
 				3A9C7210283D5D95000AB50A /* PantallasCleanSwiftUITestsLaunchTests.swift in Sources */,
 				3A9C7246283D68B3000AB50A /* Pantalla2Models.swift in Sources */,
-				3A9C7233283D6838000AB50A /* Pantalla1Interactor.swift in Sources */,
-				3A9C7230283D6838000AB50A /* Pantalla1ViewController.swift in Sources */,
-				3A9C7224283D6838000AB50A /* Pantalla1Presenter.swift in Sources */,
 				3A9C7240283D68B3000AB50A /* Pantalla2Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
