@@ -40,11 +40,6 @@ class Pantalla1ViewController: UIViewController, Pantalla1DisplayLogic
   
   private func setup()
   {
-      //Aaaaa
-      
-      //bbbb
-      //cccccc
-      
     let viewController = self
     let interactor = Pantalla1Interactor()
     let presenter = Pantalla1Presenter()
@@ -55,6 +50,7 @@ class Pantalla1ViewController: UIViewController, Pantalla1DisplayLogic
     presenter.viewController = viewController
     router.viewController = viewController
     router.dataStore = interactor
+      //viewController.restorationIdentifier = "Pantalla1ViewController"
   }
   
   // MARK: Routing
@@ -74,21 +70,118 @@ class Pantalla1ViewController: UIViewController, Pantalla1DisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    presentaPantalla()
   }
   
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
+    let tituloLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Ingrese:"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let infoLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "USUARIO Y/O CLAVE INVALIDA"
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let loginTextField: UITextField = {
+        //let textField = UITextField(frame: CGRect(x: 190, y: 100, width: 300.00, height: 30.00))
+        let textField = UITextField()
+        textField.font = UIFont.systemFont(ofSize: 20)
+        textField.placeholder = "Ingrese login"
+        //textField.text = "UITextField example"
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.backgroundColor = UIColor.lightGray
+        textField.textColor = UIColor.blue
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textField
+    }()
+    
+    let claveTextField: UITextField = {
+
+        let textField = UITextField()
+        textField.font = UIFont.systemFont(ofSize: 20)
+        textField.placeholder = "Ingrese clave"
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.backgroundColor = UIColor.lightGray
+        textField.textColor = UIColor.black
+        textField.isSecureTextEntry = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textField
+    }()
+    
+    let loginButton : UIButton = {
+        let boton = UIButton(type: .system)
+        boton.setTitleColor(.red, for: .normal)
+        boton.setTitle("ENVIAR", for: .normal)
+        boton.backgroundColor = .blue
+        boton.translatesAutoresizingMaskIntoConstraints = false
+        boton.addTarget(self, action: #selector(validar), for: .touchUpInside)
+        
+        return boton
+    }()
+    
+    @objc func validar(sender: UIButton!){
+        print ("QQQQQQ")
+        let request = Pantalla1.Something.Request.init(loginRequest: loginTextField.text ?? "Sin NOMBRE", passwordRequest: claveTextField.text ?? "Sin CLAVE")
+        interactor?.doSomething(request: request)
+        
+    }
+  func presentaPantalla()
   {
-    let request = Pantalla1.Something.Request()
-    interactor?.doSomething(request: request)
+      view.addSubview(tituloLabel)
+      view.addSubview(loginTextField)
+      view.addSubview(claveTextField)
+      view.addSubview(loginButton)
+      view.addSubview(infoLabel)
+    
+      NSLayoutConstraint.activate([
+        tituloLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
+        tituloLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        
+        loginTextField.widthAnchor.constraint(equalToConstant: 200),
+        loginTextField.heightAnchor.constraint(equalToConstant: 30),
+        loginTextField.centerXAnchor.constraint(equalTo: tituloLabel.centerXAnchor),
+        loginTextField.bottomAnchor.constraint(equalTo: tituloLabel.bottomAnchor, constant: 50),
+        
+        claveTextField.widthAnchor.constraint(equalToConstant: 200),
+        claveTextField.heightAnchor.constraint(equalToConstant: 30),
+        claveTextField.centerXAnchor.constraint(equalTo: tituloLabel.centerXAnchor),
+        claveTextField.bottomAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 50),
+        
+        loginButton.widthAnchor.constraint(equalToConstant: 150),
+        loginButton.heightAnchor.constraint(equalToConstant: 30),
+        loginButton.centerXAnchor.constraint(equalTo: tituloLabel.centerXAnchor),
+        loginButton.bottomAnchor.constraint(equalTo: claveTextField.bottomAnchor, constant: 50),
+        
+        infoLabel.centerXAnchor.constraint(equalTo: tituloLabel.centerXAnchor),
+        infoLabel.bottomAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 50),
+      ])
   }
   
   func displaySomething(viewModel: Pantalla1.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
+      loginTextField.text = viewModel.nombreVM
+      claveTextField.text = viewModel.passwordVM
+      if !viewModel.validacionVM {
+          infoLabel.textColor = .black
+      }else {
+          router?.routeToPantalla2(segue: nil)
+          //infoLabel.textColor = .white
+      }
   }
 }

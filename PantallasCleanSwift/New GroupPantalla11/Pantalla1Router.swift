@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol Pantalla1RoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToPantalla2(segue: UIStoryboardSegue?)
 }
 
 protocol Pantalla1DataPassing
@@ -29,32 +29,32 @@ class Pantalla1Router: NSObject, Pantalla1RoutingLogic, Pantalla1DataPassing
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+  func routeToPantalla2(segue: UIStoryboardSegue?)
+  {
+    if let segue = segue {
+      let destinationVC = segue.destination as! Pantalla2ViewController
+      var destinationDS = destinationVC.router!.dataStore!
+      passDataToPatalla2(source: dataStore!, destination: &destinationDS)
+    } else {
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let destinationVC = storyboard.instantiateViewController(withIdentifier: "Pantalla2ViewController") as! Pantalla2ViewController
+      var destinationDS = destinationVC.router!.dataStore!
+      passDataToPatalla2(source: dataStore!, destination: &destinationDS)
+      navigateToPantalla2(source: viewController!, destination: destinationVC)
+    }
+  }
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: Pantalla1ViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
+  func navigateToPantalla2(source: Pantalla1ViewController, destination: Pantalla2ViewController)
+  {
+    source.show(destination, sender: nil)
+  }
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: Pantalla1DataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+  func passDataToPatalla2(source: Pantalla1DataStore, destination: inout Pantalla2DataStore)
+  {
+      destination.datosRecibidos = source.datosEnviados
+  }
 }

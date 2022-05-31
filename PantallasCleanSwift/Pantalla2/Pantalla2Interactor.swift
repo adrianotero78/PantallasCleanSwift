@@ -20,6 +20,7 @@ protocol Pantalla2BusinessLogic
 protocol Pantalla2DataStore
 {
   //var name: String { get set }
+    var datosRecibidos: Pantalla1.Something.Request { get set }
 }
 
 class Pantalla2Interactor: Pantalla2BusinessLogic, Pantalla2DataStore
@@ -27,6 +28,7 @@ class Pantalla2Interactor: Pantalla2BusinessLogic, Pantalla2DataStore
   var presenter: Pantalla2PresentationLogic?
   var worker: Pantalla2Worker?
   //var name: String = ""
+    var datosRecibidos: Pantalla1.Something.Request = .init(loginRequest: "", passwordRequest: "")
   
   // MARK: Do something
   
@@ -35,7 +37,7 @@ class Pantalla2Interactor: Pantalla2BusinessLogic, Pantalla2DataStore
     worker = Pantalla2Worker()
     worker?.doSomeWork()
     
-    let response = Pantalla2.Something.Response()
+      let response = Pantalla2.Something.Response(nombreResponseP2: datosRecibidos.loginRequest, passwordResponseP2: datosRecibidos.passwordRequest)
     presenter?.presentSomething(response: response)
   }
 }

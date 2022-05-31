@@ -20,12 +20,20 @@ enum Pantalla1
   {
     struct Request
     {
+        var loginRequest: String
+        var passwordRequest: String
     }
     struct Response
     {
+        var nombreResponse: String
+        var passwordResponse: String
+        var validacion: Bool
     }
     struct ViewModel
     {
+        var nombreVM: String
+        var passwordVM: String
+        var validacionVM: Bool
     }
   }
 }

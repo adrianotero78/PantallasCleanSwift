@@ -25,7 +25,7 @@ class Pantalla2Presenter: Pantalla2PresentationLogic
   
   func presentSomething(response: Pantalla2.Something.Response)
   {
-    let viewModel = Pantalla2.Something.ViewModel()
+      let viewModel = Pantalla2.Something.ViewModel(nombreVMP2: response.nombreResponseP2, passwordVMP2: response.passwordResponseP2)
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

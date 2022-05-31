@@ -14,7 +14,12 @@ import UIKit
 
 class Pantalla1Worker
 {
-  func doSomeWork()
-  {
-  }
+    var nombreReal: String = "Adrian"
+    var claveReal: String = "123456"
+    
+    func doSomeWork(request: Pantalla1.Something.Request) -> Bool {
+        if (self.nombreReal == request.loginRequest && self.claveReal == request.passwordRequest){
+            return true
+        }else {return false}
+    }
 }

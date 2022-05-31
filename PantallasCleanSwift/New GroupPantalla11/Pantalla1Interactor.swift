@@ -20,6 +20,7 @@ protocol Pantalla1BusinessLogic
 protocol Pantalla1DataStore
 {
   //var name: String { get set }
+    var datosEnviados: Pantalla1.Something.Request { get set }
 }
 
 class Pantalla1Interactor: Pantalla1BusinessLogic, Pantalla1DataStore
@@ -27,15 +28,20 @@ class Pantalla1Interactor: Pantalla1BusinessLogic, Pantalla1DataStore
   var presenter: Pantalla1PresentationLogic?
   var worker: Pantalla1Worker?
   //var name: String = ""
-  
+    var datosEnviados: Pantalla1.Something.Request = .init(loginRequest: "", passwordRequest: "")
+    
   // MARK: Do something
   
   func doSomething(request: Pantalla1.Something.Request)
   {
     worker = Pantalla1Worker()
-    worker?.doSomeWork()
-    
-    let response = Pantalla1.Something.Response()
+    guard let validado = worker?.doSomeWork(request: request) else { return }
+    var response = Pantalla1.Something.Response(nombreResponse: request.loginRequest, passwordResponse: request.passwordRequest, validacion: false)
+    if validado {
+        print (validado)
+        response.validacion = true
+        datosEnviados = request
+    }
     presenter?.presentSomething(response: response)
   }
 }

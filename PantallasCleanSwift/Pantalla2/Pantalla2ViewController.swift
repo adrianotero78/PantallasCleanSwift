@@ -50,6 +50,8 @@ class Pantalla2ViewController: UIViewController, Pantalla2DisplayLogic
     presenter.viewController = viewController
     router.viewController = viewController
     router.dataStore = interactor
+      //viewController.restorationIdentifier = "Pantalla2ViewController"
+      //viewController.title = "Pantalla2ViewController"
   }
   
   // MARK: Routing
@@ -75,9 +77,21 @@ class Pantalla2ViewController: UIViewController, Pantalla2DisplayLogic
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
-  
+    let label2: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Respuesta"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
   func doSomething()
   {
+    view.addSubview(label2)
+      NSLayoutConstraint.activate([
+          label2.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+          label2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      ])
     let request = Pantalla2.Something.Request()
     interactor?.doSomething(request: request)
   }
@@ -85,5 +99,6 @@ class Pantalla2ViewController: UIViewController, Pantalla2DisplayLogic
   func displaySomething(viewModel: Pantalla2.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
+      label2.text = viewModel.nombreVMP2
   }
 }

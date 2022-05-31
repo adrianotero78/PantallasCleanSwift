@@ -23,9 +23,13 @@ enum Pantalla2
     }
     struct Response
     {
+        var nombreResponseP2: String
+        var passwordResponseP2: String
     }
     struct ViewModel
     {
+        var nombreVMP2: String
+        var passwordVMP2: String
     }
   }
 }
